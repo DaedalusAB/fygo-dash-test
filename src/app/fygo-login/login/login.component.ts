@@ -23,6 +23,10 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void {
+    if (this.authForm.invalid) {
+      return;
+    }
+
     const data = this.authForm.getRawValue();
     this.authService.login(data.username, data.password).subscribe(
       (fygoUser: FygoUser) => {
@@ -41,6 +45,12 @@ export class LoginComponent implements OnInit {
   public getUsernameValidationMessage(): string {
     //  TODO - if I have time, I wanna do a specific error for validation rule
     return 'This field is not valid :(';
+  }
+
+  public keyDownFunction(event): void {
+    if (event.key === 'Enter' && this.authForm.valid) {
+      this.login();
+    }
   }
 
   private buildAuthForm(): void {

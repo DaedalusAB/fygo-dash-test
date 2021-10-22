@@ -1,5 +1,5 @@
 <div class="form-container">
-    <form [formGroup]="authForm">
+    <form [formGroup]="authForm" (keydown)="keyDownFunction($event)">
         <div class="control-container">
             <input class="default-input" [ngClass]="{ 'input-invalid': shouldDisplayUsernameValidation() }"
                 formControlName="username" type="text" placeholder="Username">
