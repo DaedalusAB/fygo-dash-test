@@ -13,7 +13,6 @@ export class MerchantsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.merchantApiService.getAllMerchants().subscribe(res => console.log(">> res", res));
+    this.merchantApiService.getAPageOfMerchants().subscribe(res => console.log(">> res", res));
   }
-
 }

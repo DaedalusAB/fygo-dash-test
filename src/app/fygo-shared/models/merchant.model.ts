@@ -4,3 +4,10 @@ export interface Merchant {
     cashback: string;
     description: string;
 }
+
+export interface MerchantsPage {
+    count: number;
+    next: string;
+    previous: string;
+    results: Merchant[];
+}
