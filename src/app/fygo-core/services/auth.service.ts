@@ -16,7 +16,7 @@ export class AuthService {
     localStorage.setItem('token', val);
   }
 
-  public get token(): string {
+  private get token(): string {
     return localStorage.getItem('token');
   }
 
