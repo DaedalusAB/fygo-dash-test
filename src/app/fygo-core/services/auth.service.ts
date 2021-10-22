@@ -24,6 +24,13 @@ export class AuthService {
     return !!this.token;
   }
 
+  public getToken(): string {
+    //  TODO refactor this ?
+    //  TS doesn't allow for getter and setter to have different accessors;
+    //  And I do not want to make my token setter public - hence this method kinda duplicates token getter
+    return this.token;
+  }
+
   public login(username: string, password: string): Observable<FygoUser> {
     const url = `https://october-11.herokuapp.com/api-token-auth/`;
     return this.httpClient.post<FygoUser>(url, { username, password })
