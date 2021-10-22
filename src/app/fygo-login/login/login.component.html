@@ -1,1 +1,12 @@
-<p>login works!</p>
+<div class="form-container">
+    <form [formGroup]="authForm">
+        <div class="control-container">
+            <input formControlName="username" type="text" placeholder="Username">
+            <span *ngIf="shouldDisplayUsernameValidation()">{{ getUsernameValidationMessage() }}</span>
+        </div>
+        <div class="control-container">
+            <input formControlName="password" type="password" placeholder="Passowrd">
+        </div>
+    </form>
+    <button (click)="login()" [disabled]="authForm.invalid">Login</button>
+</div>
