@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Route, RouterModule } from '@angular/router';
-import { MerchantsComponent } from './merchants/merchants.component';
+import { MerchantListComponent } from './merchant-list/merchant-list.component';
 
 const routes: Route[] = [
   {
@@ -13,12 +13,12 @@ const routes: Route[] = [
       {
         path: '',
         pathMatch: 'full',
-        component: MerchantsComponent
+        component: MerchantListComponent
       },
       {
         path: 'merchants',
         pathMatch: 'full',
-        component: MerchantsComponent
+        component: MerchantListComponent
       },
     ]
   }
@@ -27,7 +27,7 @@ const routes: Route[] = [
 @NgModule({
   declarations: [
     DashboardComponent,
-    MerchantsComponent,
+    MerchantListComponent,
   ],
   imports: [
     CommonModule,

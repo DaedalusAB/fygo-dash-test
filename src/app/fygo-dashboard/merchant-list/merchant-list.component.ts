@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MerchantApiService } from 'src/app/fygo-core/services/merchant-api.service';
 
 @Component({
-  selector: 'app-merchants',
-  templateUrl: './merchants.component.html',
-  styleUrls: ['./merchants.component.scss']
+  selector: 'app-merchant-list',
+  templateUrl: './merchant-list.component.html',
+  styleUrls: ['./merchant-list.component.scss']
 })
-export class MerchantsComponent implements OnInit {
+export class MerchantListComponent implements OnInit {
 
   constructor(
     private merchantApiService: MerchantApiService,
