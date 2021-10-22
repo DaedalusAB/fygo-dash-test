@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/fygo-core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   constructor(    
     private formBuilder: FormBuilder,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
@@ -20,6 +22,7 @@ export class LoginComponent implements OnInit {
   public login(): void {
     const data = this.authForm.getRawValue();
     console.log("TODO login ", data);    
+    this.authService.login(data.username, data.password).subscribe(res => console.log(">> login res", res))
   }
 
   public shouldDisplayUsernameValidation(): boolean {
