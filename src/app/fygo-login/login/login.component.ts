@@ -11,6 +11,7 @@ import { FygoUser } from 'src/app/fygo-shared/models/fygo-user.model';
 })
 export class LoginComponent implements OnInit {
   public authForm: FormGroup;
+  public isLoading: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,13 +28,17 @@ export class LoginComponent implements OnInit {
       return;
     }
 
+    this.isLoading = true;
     const data = this.authForm.getRawValue();
     this.authService.login(data.username, data.password).subscribe(
       (fygoUser: FygoUser) => {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard']).then(
+          () => this.isLoading = false
+        );
       },
       error => {
         //  TODO tell user about login error
+        this.isLoading = false;
       }
     );
   }

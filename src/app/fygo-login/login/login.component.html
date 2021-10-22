@@ -12,3 +12,4 @@
     </form>
     <button class="default-button" (click)="login()" [disabled]="authForm.invalid">Login</button>
 </div>
+<fygo-loader-overlay *ngIf="isLoading"></fygo-loader-overlay>
