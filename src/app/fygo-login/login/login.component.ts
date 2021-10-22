@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/fygo-core/services/auth.service';
 import { FygoUser } from 'src/app/fygo-shared/models/fygo-user.model';
 
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -23,7 +25,9 @@ export class LoginComponent implements OnInit {
   public login(): void {
     const data = this.authForm.getRawValue();
     this.authService.login(data.username, data.password).subscribe(
-      (fygoUser: FygoUser) => console.log("Login successful", fygoUser),
+      (fygoUser: FygoUser) => {
+        this.router.navigate(['dashboard']);
+      },
       error => {
         //  TODO tell user about login error
       }
