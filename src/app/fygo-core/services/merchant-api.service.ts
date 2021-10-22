@@ -12,11 +12,18 @@ export class MerchantApiService {
     private httpClient: HttpClient,
   ) { }
 
-  public getAPageOfMerchants(page: number = 1): Observable<MerchantsPage> {
-    //  TODO I think the demo BE only has a single page with 5 merchants; I'll go ahead with this assumption for now :shrug:
-    const url = `https://october-11.herokuapp.com/api/v1/merchants/`;
-    const params = new HttpParams().set('page', page.toString());
-    
-    return this.httpClient.get<MerchantsPage>(url, { params });
+  //  I think the demo BE only has a single page with 5 merchants and no other page - which is OK; but..
+  //  It was unclear to me what would exactly be in the fields next/previous in case there was more than a single page
+  //  I'll assume the fields would contain the URL at which the next/previous page can be fetched
+  //  ie. if there were 2 pages, the 1st page.next = `https://october-11.herokuapp.com/api/v1/merchants/?page=2`
+  //  I'll be happy to refactor this code if my assumption is wrong :)
+
+  public getFirstPage(): Observable<MerchantsPage> {
+    const url = `https://october-11.herokuapp.com/api/v1/merchants/?page=1`;    
+    return this.httpClient.get<MerchantsPage>(url);
+  }
+  
+  public getAPage(uri: string): Observable<MerchantsPage> {    
+    return this.httpClient.get<MerchantsPage>(uri);
   }
 }

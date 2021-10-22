@@ -1,1 +1,12 @@
-<p>merchants works!</p>
+<div>
+    <div 
+        class="merchant-list" 
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollUpDistance]="1.5"
+        [infiniteScrollThrottle]="50"
+        (scrolled)="onScroll()"
+    >
+        <fygo-merchant-item  *ngFor="let merchant of merchants" [merchant]="merchant"></fygo-merchant-item>
+    </div>
+</div>

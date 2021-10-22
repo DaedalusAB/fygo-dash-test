@@ -1,0 +1,29 @@
+.merchant-item {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid var(--border-color);
+
+    .merchant-item-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        padding: 10px;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        .merchant-id {
+
+        }
+
+        .merchant-name {
+
+        }
+
+        .merchant-cashback {
+
+        }
+    }
+}

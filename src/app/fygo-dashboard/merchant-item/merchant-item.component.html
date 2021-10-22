@@ -1,0 +1,21 @@
+<div class="merchant-item">
+
+    <div class="merchant-item-row">
+        <!-- TODO should the ID be shown to the user? :thinking: -->
+        <div class="merchant-id">
+            {{merchant.id}}
+        </div>
+        <div class="merchant-name">
+            {{merchant.name}}
+        </div>
+        <div class="merchant-cashback">
+            {{merchant.cashback}}
+        </div>
+    </div>
+
+    <div class="merchant-item-row">
+        <div class="merchant-description" [innerHtml]="merchant.description">
+        </div>
+    </div>
+
+</div>

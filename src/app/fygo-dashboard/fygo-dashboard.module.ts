@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Route, RouterModule } from '@angular/router';
 import { MerchantListComponent } from './merchant-list/merchant-list.component';
+import { MerchantItemComponent } from './merchant-item/merchant-item.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 const routes: Route[] = [
   {
@@ -28,10 +30,12 @@ const routes: Route[] = [
   declarations: [
     DashboardComponent,
     MerchantListComponent,
+    MerchantItemComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    InfiniteScrollModule,
   ],
 })
 export class FygoDashboardModule { }
