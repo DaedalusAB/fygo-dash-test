@@ -1,12 +1,14 @@
 <div class="form-container">
     <form [formGroup]="authForm">
         <div class="control-container">
-            <input formControlName="username" type="text" placeholder="Username">
-            <span *ngIf="shouldDisplayUsernameValidation()">{{ getUsernameValidationMessage() }}</span>
+            <input class="default-input" [ngClass]="{ 'input-invalid': shouldDisplayUsernameValidation() }"
+                formControlName="username" type="text" placeholder="Username">
+            <span class="input-error" *ngIf="shouldDisplayUsernameValidation()">{{ getUsernameValidationMessage()
+                }}</span>
         </div>
         <div class="control-container">
-            <input formControlName="password" type="password" placeholder="Passowrd">
+            <input class="default-input" formControlName="password" type="password" placeholder="Passowrd">
         </div>
     </form>
-    <button (click)="login()" [disabled]="authForm.invalid">Login</button>
+    <button class="default-button" (click)="login()" [disabled]="authForm.invalid">Login</button>
 </div>

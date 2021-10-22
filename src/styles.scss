@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import './styles/variables.scss';
+
+* {
+    font-family: Quicksand,sans-serif;
+    color: var(--default-color);
+}
+
+// Global styles
+.default-button {
+    background-color: var(--btn-default-bg-color);
+    border-color: var(--btn-default-bg-color);
+    border-radius: 70px;
+    border: 0;
+    padding: 19px 30px;
+    width: auto;
+    color: var(--btn-default-color);
+    cursor: pointer;
+    border-image: none;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: .01em;
+
+    &:disabled {
+        filter: grayscale(0.35);
+    }
+}
+
+.default-input {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+
+    font-size: 18px;
+    letter-spacing: .065em;
+    font-weight: 700;
+
+    &:focus {
+        outline: none;
+    } 
+
+    &.input-invalid {
+        border-color: var(--error-color);
+    }
+}

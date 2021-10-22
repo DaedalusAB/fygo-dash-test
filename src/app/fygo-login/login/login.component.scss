@@ -1,0 +1,30 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+    margin: auto;
+
+    .control-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        margin-bottom: 25px;
+
+        .input-error {
+            color: var(--error-color);
+            margin-top: 5px;
+            font-size: 14px;
+
+            position: absolute;
+            top: 20px;
+        }
+    }
+}
