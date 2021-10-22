@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './fygo-core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,11 +16,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     pathMatch: 'full',
-    loadChildren: () => import('./fygo-dashboard/fygo-dashboard.module').then(m => m.FygoDashboardModule)
+    loadChildren: () => import('./fygo-dashboard/fygo-dashboard.module').then(m => m.FygoDashboardModule),
+    canActivate: [ AuthGuard ]
   }
 ];
-//  TODO route guards [for other routes]!!
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

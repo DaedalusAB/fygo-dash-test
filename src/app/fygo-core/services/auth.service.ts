@@ -20,6 +20,10 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  public get hasToken(): boolean {
+    return !!this.token;
+  }
+
   public login(username: string, password: string): Observable<FygoUser> {
     const url = `https://october-11.herokuapp.com/api-token-auth/`;
     return this.httpClient.post<FygoUser>(url, { username, password })
