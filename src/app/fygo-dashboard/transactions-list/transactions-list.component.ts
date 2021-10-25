@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionApiService } from 'src/app/fygo-core/services/transaction-api.service';
+import { Transaction, TransactionsPage } from 'src/app/fygo-shared/models/transaction.model';
 
 @Component({
   selector: 'fygo-transactions-list',
@@ -7,8 +8,8 @@ import { TransactionApiService } from 'src/app/fygo-core/services/transaction-ap
   styleUrls: ['./transactions-list.component.scss']
 })
 export class TransactionsListComponent implements OnInit {
-  public transactions: any[] = []; //  TODO maybe use NgRx, should be fun :)
-  private lastPage: any;
+  public transactions: Transaction[] = []; //  TODO maybe use NgRx, should be fun :)
+  private lastPage: TransactionsPage;
 
   constructor(
     private transactionApiService: TransactionApiService,
@@ -16,7 +17,7 @@ export class TransactionsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.transactionApiService.getFirstPage().subscribe(
-      (page: any) => this.loadPage(page)
+      (page: TransactionsPage) => this.loadPage(page)
     );
   }
 
@@ -29,14 +30,14 @@ export class TransactionsListComponent implements OnInit {
     this.loadNextPage();
   }
 
-  private loadPage(page: any): void {
+  private loadPage(page: TransactionsPage): void {
     this.lastPage = page;
     this.transactions.push(...page.results);
   }
 
   private loadNextPage(): void {
     this.transactionApiService.getAPage(this.lastPage.next).subscribe(
-      (page: any) => this.loadPage(page)
+      (page: TransactionsPage) => this.loadPage(page)
     );
   }
 }
