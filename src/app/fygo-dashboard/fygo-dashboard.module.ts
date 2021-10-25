@@ -6,6 +6,7 @@ import { MerchantListComponent } from './merchant-list/merchant-list.component';
 import { MerchantItemComponent } from './merchant-item/merchant-item.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { TransactionsListComponent } from './transactions-list/transactions-list.component';
+import { FygoSharedModule } from '../fygo-shared/fygo-shared.module';
 
 const routes: Route[] = [
   {
@@ -40,6 +41,7 @@ const routes: Route[] = [
     CommonModule,
     RouterModule.forChild(routes),
     InfiniteScrollModule,
+    FygoSharedModule,
   ],
 })
 export class FygoDashboardModule { }

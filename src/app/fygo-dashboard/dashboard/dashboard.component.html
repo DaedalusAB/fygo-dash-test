@@ -1,7 +1,5 @@
-<div class="dashboard-header">
-    <img src="assets/images/fygo-logo.png">
-    <div class="title">Dashboard</div>
-</div>
+<fygo-header [title]="'Dashboard'"></fygo-header>
+
 <div class="dashboard-nav">
     <!-- TODO nav clicking :) -->
     <div class="nav-button" (click)="goToMerchants()" [ngClass]="{'active': activeTab === ActiveDashboardTab.Merchants}">
