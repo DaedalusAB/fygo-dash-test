@@ -4,10 +4,10 @@
 </div>
 <div class="dashboard-nav">
     <!-- TODO nav clicking :) -->
-    <div class="nav-button active">
+    <div class="nav-button" (click)="goToMerchants()" [ngClass]="{'active': activeTab === ActiveDashboardTab.Merchants}">
         Merchants
     </div>
-    <div class="nav-button">
+    <div class="nav-button" (click)="goToTransactions()" [ngClass]="{'active': activeTab === ActiveDashboardTab.Transactions}">
         Transactions
     </div>
 </div>

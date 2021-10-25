@@ -10,19 +10,17 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    pathMatch: 'full',
     loadChildren: () => import('./fygo-login/fygo-login.module').then(m => m.FygoLoginModule)
   },
   {
     path: 'dashboard',
-    pathMatch: 'full',
     loadChildren: () => import('./fygo-dashboard/fygo-dashboard.module').then(m => m.FygoDashboardModule),
     canActivate: [ AuthGuard ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
