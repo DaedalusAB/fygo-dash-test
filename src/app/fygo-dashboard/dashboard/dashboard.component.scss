@@ -11,6 +11,39 @@
     }
 }
 
+.dashboard-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    font-size: 18px;
+    font-weight: 600;    
+
+    .nav-button {
+        width: 100%;
+        max-width: 150px;
+        text-align: center;
+        border-right: 2px solid var(--default-color);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:last-child {
+            border: none;
+        }
+
+        &.active {
+            color: var(--highlight-color);
+
+            &:hover {
+                cursor: default;
+            }
+        }
+    }
+}
+
 .dashboard-container {
     border: 1px solid var(--border-color);    
     max-width: 800px;   
