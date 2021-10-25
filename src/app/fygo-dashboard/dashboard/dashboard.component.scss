@@ -1,0 +1,18 @@
+.dashboard-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 20px;
+    }
+}
+
+.dashboard-container {
+    border: 1px solid var(--border-color);    
+    max-width: 800px;   
+    margin: auto;
+}

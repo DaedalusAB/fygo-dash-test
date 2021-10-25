@@ -1,21 +1,18 @@
 <div class="merchant-item">
+    <div class="icon">
+        <img src="assets/images/merchant-placeholder.svg">
+    </div>
 
-    <div class="merchant-item-row">
-        <!-- TODO should the ID be shown to the user? :thinking: -->
-        <div class="merchant-id">
-            {{merchant.id}}
-        </div>
-        <div class="merchant-name">
+    <div class="data">
+        <div class="title">
             {{merchant.name}}
         </div>
-        <div class="merchant-cashback">
-            {{merchant.cashback}}
+        <div class="subtitle">
+            {{merchant.description}}
         </div>
     </div>
 
-    <div class="merchant-item-row">
-        <div class="merchant-description" [innerHtml]="merchant.description">
-        </div>
+    <div class="cashback">
+        {{merchant.cashback}}
     </div>
-
 </div>
