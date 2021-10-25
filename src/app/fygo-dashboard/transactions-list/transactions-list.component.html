@@ -1,1 +1,13 @@
-<p>transactions-list works!</p>
+<div>
+    <div 
+        class="merchant-list" 
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollUpDistance]="1.5"
+        [infiniteScrollThrottle]="50"
+        [scrollWindow]="false"
+        (scrolled)="onScroll()"
+    >
+        <div style="height: 45px;" *ngFor="let transaction of transactions;  let i = index">{{i}} : {{transaction.id}}</div>
+    </div>
+</div>

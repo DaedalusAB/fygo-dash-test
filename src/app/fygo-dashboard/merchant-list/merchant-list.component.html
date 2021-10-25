@@ -5,6 +5,7 @@
         [infiniteScrollDistance]="2"
         [infiniteScrollUpDistance]="1.5"
         [infiniteScrollThrottle]="50"
+        [scrollWindow]="false"
         (scrolled)="onScroll()"
     >
         <fygo-merchant-item  *ngFor="let merchant of merchants" [merchant]="merchant"></fygo-merchant-item>
