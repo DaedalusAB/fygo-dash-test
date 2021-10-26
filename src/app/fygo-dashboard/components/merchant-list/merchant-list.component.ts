@@ -4,7 +4,7 @@ import { MerchantApiService } from 'src/app/fygo-core/services/merchant-api.serv
 import { Merchant, MerchantsPage } from 'src/app/fygo-shared/models/merchant.model';
 
 @Component({
-  selector: 'app-merchant-list',
+  selector: 'fygo-merchant-list',
   templateUrl: './merchant-list.component.html',
   styleUrls: ['./merchant-list.component.scss']
 })

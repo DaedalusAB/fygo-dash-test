@@ -5,7 +5,7 @@ import { AuthService } from 'src/app/fygo-core/services/auth.service';
 import { FygoUser } from 'src/app/fygo-shared/models/fygo-user.model';
 
 @Component({
-  selector: 'app-login',
+  selector: 'fygo-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
