@@ -16,8 +16,7 @@ export class DashboardComponent {
   public ActiveDashboardTab = ActiveDashboardTab;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) { }
 
   public goToMerchants(): void {
@@ -26,7 +25,7 @@ export class DashboardComponent {
     }
 
     this.activeTab = ActiveDashboardTab.Merchants;
-    this.router.navigate(['merchants'], { relativeTo: this.route });
+    this.router.navigate(['dashboard', 'merchants']);
   }
 
   public goToTransactions(): void {
@@ -35,6 +34,6 @@ export class DashboardComponent {
     }
 
     this.activeTab = ActiveDashboardTab.Transactions;
-    this.router.navigate(['transactions'], { relativeTo: this.route });
+    this.router.navigate(['dashboard', 'transactions']);
   }
 }
