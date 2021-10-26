@@ -3,6 +3,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding: 40px 20px 40px 20px;
+
+    font-size: 14px;
+    font-weight: 200;
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        :not(:last-child) {
+            padding-right: 10px;
+            border-right: 1px solid var(--default-color);
+        }
+
+        :last-child {
+            padding-left: 10px;
+        }
+    }
 }
