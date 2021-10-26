@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Transaction } from 'src/app/fygo-shared/models/transaction.model';
 
 @Component({
@@ -6,13 +7,20 @@ import { Transaction } from 'src/app/fygo-shared/models/transaction.model';
   templateUrl: './transaction-item.component.html',
   styleUrls: ['./transaction-item.component.scss']
 })
-export class TransactionItemComponent  {
+export class TransactionItemComponent {
   @Input() transaction: Transaction;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
 
   public get createdDate(): Date {
     return new Date(this.transaction.created);
+  }
+
+  public openMerchant(): void {
+    if(+this.transaction.amount > 0)
+    this.router.navigate(['dashboard', 'merchant', this.transaction.merchant_id]);
   }
 }

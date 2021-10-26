@@ -1,5 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Merchant } from 'src/app/fygo-shared/models/merchant.model';
 
 @Component({
@@ -11,10 +12,15 @@ export class MerchantComponent implements OnInit {
   public merchant: Merchant;
 
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private location: Location,
   ) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(data => this.merchant = data.merchant);
+  }
+
+  public exit(): void {
+    this.location.back();
   }
 }
