@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Merchant } from 'src/app/fygo-shared/models/merchant.model';
 
 @Component({
   selector: 'app-merchant',
@@ -7,13 +8,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./merchant.component.scss']
 })
 export class MerchantComponent implements OnInit {
+  public merchant: Merchant;
 
   constructor(
     private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    console.log(">> activatedRoute", this.activatedRoute);    
+    this.activatedRoute.data.subscribe(data => this.merchant = data.merchant);
   }
-
 }

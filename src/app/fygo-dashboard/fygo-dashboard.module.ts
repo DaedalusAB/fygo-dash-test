@@ -11,6 +11,7 @@ import { TransactionsListComponent } from './components/transactions-list/transa
 import { MerchantsResolver } from './resolvers/merchants.resolver';
 import { TransactionsResolver } from './resolvers/transactions.resolver';
 import { MerchantComponent } from './components/merchant/merchant.component';
+import { MerchantResolver } from './resolvers/merchant.resolver';
 
 const routes: Route[] = [
   {
@@ -35,7 +36,7 @@ const routes: Route[] = [
       {
         path: 'merchant/:merchantId',
         component: MerchantComponent,
-        //  TODO resolve
+        resolve: { merchant: MerchantResolver,}
       }
     ]
   }
@@ -57,6 +58,7 @@ const routes: Route[] = [
     FygoSharedModule,
   ],
   providers: [
+    MerchantResolver,
     MerchantsResolver,
     TransactionsResolver,
   ]
