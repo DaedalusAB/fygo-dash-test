@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { TransactionApiService } from 'src/app/fygo-core/services/transaction-api.service';
 import { Transaction, TransactionsPage } from 'src/app/fygo-shared/models/transaction.model';
 
@@ -8,25 +9,23 @@ import { Transaction, TransactionsPage } from 'src/app/fygo-shared/models/transa
   styleUrls: ['./transactions-list.component.scss']
 })
 export class TransactionsListComponent implements OnInit {
-  public transactions: Transaction[] = []; //  TODO maybe use NgRx, should be fun :)
+  public transactions: Transaction[] = [];
   private lastPage: TransactionsPage;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private transactionApiService: TransactionApiService,
   ) { }
 
   ngOnInit(): void {
-    this.transactionApiService.getFirstPage().subscribe(
-      (page: TransactionsPage) => this.loadPage(page)
-    );
+    this.activatedRoute.data.subscribe(data => this.loadPage(data.transactionsFirstPage));
   }
 
   public onScroll(): void {
-    if(!this.lastPage || !this.lastPage.next) {
+    if (!this.lastPage || !this.lastPage.next) {
       return;
     }
-    
-    console.log("[!] Next page would be loaded if it existed :)")
+
     this.loadNextPage();
   }
 

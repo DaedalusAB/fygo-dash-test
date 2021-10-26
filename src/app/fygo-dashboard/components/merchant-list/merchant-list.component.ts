@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MerchantApiService } from 'src/app/fygo-core/services/merchant-api.service';
 import { Merchant, MerchantsPage } from 'src/app/fygo-shared/models/merchant.model';
 
@@ -8,25 +9,23 @@ import { Merchant, MerchantsPage } from 'src/app/fygo-shared/models/merchant.mod
   styleUrls: ['./merchant-list.component.scss']
 })
 export class MerchantListComponent implements OnInit {
-  public merchants: Merchant[] = []; //  TODO maybe use NgRx, should be fun :)
+  public merchants: Merchant[] = [];
   private lastPage: MerchantsPage;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private merchantApiService: MerchantApiService,
   ) { }
 
   ngOnInit(): void {
-    this.merchantApiService.getFirstPage().subscribe(
-      (page: MerchantsPage) => this.loadPage(page)
-    );
+    this.activatedRoute.data.subscribe(data => this.loadPage(data.merchantsFirstPage));
   }
 
   public onScroll(): void {
-    if(!this.lastPage || !this.lastPage.next) {
+    if (!this.lastPage || !this.lastPage.next) {
       return;
     }
-    
-    console.log("[!] Next page would be loaded if it existed :)")
+
     this.loadNextPage();
   }
 
