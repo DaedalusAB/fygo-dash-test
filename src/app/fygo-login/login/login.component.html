@@ -5,11 +5,11 @@
         <div class="control-container">
             <input class="default-input" [ngClass]="{ 'input-invalid': shouldDisplayUsernameValidation() }"
                 formControlName="username" type="text" placeholder="Username">
-            <span class="input-error" *ngIf="shouldDisplayUsernameValidation()">{{ getUsernameValidationMessage()
-                }}</span>
+            <span class="input-error" *ngIf="shouldDisplayUsernameValidation()">{{ getUsernameValidationMessage() }}</span>
         </div>
         <div class="control-container">
             <input class="default-input" formControlName="password" type="password" placeholder="Password">
+            <span class="input-error" *ngIf="shouldDisplayPasswordValidation()">You must enter your password</span>
         </div>
     </form>
     <div class="login-button" (click)="login()" [ngClass]="{'disabled': authForm.invalid}">Login</div>

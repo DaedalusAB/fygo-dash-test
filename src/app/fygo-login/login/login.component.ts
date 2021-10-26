@@ -52,6 +52,10 @@ export class LoginComponent implements OnInit {
     return 'This field is not valid :(';
   }
 
+  public shouldDisplayPasswordValidation(): boolean {
+    return this.authForm && this.authForm.controls['password'].dirty && this.authForm.controls['password'].errors.required;
+  }
+
   public keyDownFunction(event): void {
     if (event.key === 'Enter' && this.authForm.valid) {
       this.login();
