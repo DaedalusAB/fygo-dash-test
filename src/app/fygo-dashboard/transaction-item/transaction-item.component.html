@@ -1,9 +1,9 @@
-<div class="transaction-item">
+<div class="list-item">
     <div class="icon">
         <img src="assets/images/trx-placeholder.svg">
     </div>
 
-    <div class="data">
+    <div class="data main">
         <div class="title">
             {{transaction.title}}
         </div>
@@ -12,7 +12,8 @@
         </div>
     </div>
 
-    <div class="cashback" [ngClass]="{'withdrawal': +transaction.amount < 0}">
-        {{transaction.amount}}&nbsp;£
+    <div class="data">
+        <div class="title" [ngClass]="{'cashback' : +transaction.amount > 0, 'withdrawal': +transaction.amount < 0}">{{transaction.amount}}&nbsp;£</div>
+        <div class="subtitle">Cashback</div>
     </div>
 </div>
