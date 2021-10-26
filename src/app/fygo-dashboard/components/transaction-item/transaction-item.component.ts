@@ -24,8 +24,16 @@ export class TransactionItemComponent {
   }
 
   public openMerchant(): void {
-    if (this.isCashback) {
-      this.router.navigate(['dashboard', 'merchant', this.transaction.merchant_id]);
+    if (!this.isCashback) {
+      return;
     }
+
+    if (this.transaction.merchant_id === null) {
+      //  Sorry about a lazy UI here, out of time :P 
+      window.alert("Sorry, that merchant is gone :(");
+      return;
+    }
+
+    this.router.navigate(['dashboard', 'merchant', this.transaction.merchant_id]);
   }
 }
