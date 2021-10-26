@@ -1,3 +1,29 @@
 <div class="merchant-details">
-    {{merchant | json}}
+    <div class="title">
+        <div class="icon">
+            <img src="assets/images/merchant-placeholder.svg">
+        </div>
+        <div class="name">
+            {{merchant.name}}
+        </div>
+    </div>
+
+    <div class="data">
+        <div class="data-row">
+            <span class="data-row-title">id:</span>
+            <span class="data-row-info">{{merchant.id}}</span>
+        </div>
+        <div class="data-row">
+            <span class="data-row-title">name:</span>
+            <span class="data-row-info">{{merchant.name}}</span>
+        </div>
+        <div class="data-row">
+            <span class="data-row-title">cashback:</span>
+            <span class="data-row-info">{{merchant.cashback}}&nbsp;£</span>
+        </div>
+        <div class="data-row">
+            <span class="data-row-title">description:</span>
+            <span class="data-row-info">{{merchant.description}}</span>
+        </div>
+    </div>
 </div>
