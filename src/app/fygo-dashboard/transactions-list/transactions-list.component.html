@@ -8,6 +8,6 @@
         [scrollWindow]="false"
         (scrolled)="onScroll()"
     >
-        <div style="height: 45px;" *ngFor="let transaction of transactions;  let i = index">{{i}} : {{transaction.id}}</div>
+        <fygo-transaction-item *ngFor="let transaction of transactions" [transaction]="transaction"></fygo-transaction-item>
     </div>
 </div>

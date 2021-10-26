@@ -1,0 +1,18 @@
+<div class="merchant-item">
+    <div class="icon">
+        <img src="assets/images/trx-placeholder.svg">
+    </div>
+
+    <div class="data">
+        <div class="title">
+            {{transaction.title}}
+        </div>
+        <div class="subtitle">
+            {{transaction.created | date:'medium'}}
+        </div>
+    </div>
+
+    <div class="cashback" [ngClass]="{'withdrawal': +transaction.amount < 0}">
+        {{transaction.amount}}&nbsp;£
+    </div>
+</div>
