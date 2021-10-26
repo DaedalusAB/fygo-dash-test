@@ -1,6 +1,7 @@
 <fygo-header [title]="'Welcome'"></fygo-header>
 
 <div class="form-container">
+    <span class="invalid-login" *ngIf="invalidAttempt">Invalid username or password</span>
     <form [formGroup]="authForm" (keydown)="keyDownFunction($event)">
         <div class="control-container">
             <input class="fygo-input" [ngClass]="{ 'input-invalid': shouldDisplayUsernameValidation() }"
