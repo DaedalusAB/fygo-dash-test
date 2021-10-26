@@ -1,12 +1,12 @@
 <fygo-header [title]="'Dashboard'"></fygo-header>
 
 <div class="dashboard-nav">
-    <div class="nav-button" (click)="goToMerchants()" [ngClass]="{'active': activeTab === ActiveDashboardTab.Merchants}">
+    <button class="fygo-button nav-button" (click)="goToMerchants()" [ngClass]="{'nav-active': activeTab === ActiveDashboardTab.Merchants}">
         Merchants
-    </div>
-    <div class="nav-button" (click)="goToTransactions()" [ngClass]="{'active': activeTab === ActiveDashboardTab.Transactions}">
+    </button>
+    <button class="fygo-button nav-button" (click)="goToTransactions()" [ngClass]="{'nav-active': activeTab === ActiveDashboardTab.Transactions}">
         Transactions
-    </div>
+    </button>
 </div>
 <div class="dashboard-container">
     <router-outlet></router-outlet>

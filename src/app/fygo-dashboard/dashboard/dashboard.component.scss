@@ -13,15 +13,11 @@
         text-align: center;
         border-right: 2px solid var(--default-color);
 
-        &:hover {
-            cursor: pointer;
-        }
-
         &:last-child {
             border: none;
         }
 
-        &.active {
+        &.nav-active {
             color: var(--highlight-color);
 
             &:hover {

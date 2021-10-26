@@ -3,17 +3,17 @@
 <div class="form-container">
     <form [formGroup]="authForm" (keydown)="keyDownFunction($event)">
         <div class="control-container">
-            <input class="default-input" [ngClass]="{ 'input-invalid': shouldDisplayUsernameValidation() }"
+            <input class="fygo-input" [ngClass]="{ 'input-invalid': shouldDisplayUsernameValidation() }"
                 formControlName="username" type="text" placeholder="Username">
             <span class="input-error" *ngIf="shouldDisplayUsernameValidation()">{{ getUsernameValidationMessage() }}</span>
         </div>
         <div class="control-container">
-            <input class="default-input" formControlName="password" type="password" placeholder="Password" [ngClass]="{ 'input-invalid': shouldDisplayPasswordValidation() }">
+            <input class="fygo-input" formControlName="password" type="password" placeholder="Password" [ngClass]="{ 'input-invalid': shouldDisplayPasswordValidation() }">
             <span class="input-error" *ngIf="shouldDisplayPasswordValidation()">You must enter your password</span>
         </div>
     </form>
     <div class="form-controls">
-        <button class="login-button" (click)="login()" [ngClass]="{'disabled': authForm.invalid}">Login</button>
+        <button class="fygo-button" (click)="login()" [ngClass]="{'disabled': authForm.invalid}">Login</button>
     </div>
 </div>
 <fygo-loader-overlay *ngIf="isLoading"></fygo-loader-overlay>

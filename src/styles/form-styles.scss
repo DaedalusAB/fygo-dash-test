@@ -1,0 +1,41 @@
+button.fygo-button {
+    background: none;
+    border: none;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    text-align: right;
+
+    &:hover {
+        cursor: pointer;
+        color: var(--highlight-color);
+    }
+
+    &.disabled {
+        color: var(--border-color);
+
+        &:hover {
+            cursor: default;
+            color: var(--border-color);
+        }
+    }
+}
+
+
+.fygo-input {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+
+    font-size: 18px;
+    letter-spacing: .065em;
+    font-weight: 700;
+
+    &:focus {
+        outline: none;
+    } 
+
+    &.input-invalid {
+        border-color: var(--error-color);
+    }
+}
