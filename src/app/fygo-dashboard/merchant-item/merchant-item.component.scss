@@ -49,6 +49,7 @@
                 }
             }
         }
+        
         .cashback {
             height: 100%;
             display: flex;
@@ -58,12 +59,6 @@
 
             font-size: 18px;
             font-weight: 700;
-
-            color: var(--cashback-color);
-
-            &.withdrawal {
-                color: var(--withdrawal-color);
-            }
         }
     }
 
