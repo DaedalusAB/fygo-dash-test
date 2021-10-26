@@ -1,4 +1,4 @@
-<div class="list-item" (click)="openMerchant()">
+<div class="list-item" (click)="openMerchant()" [ngClass]="{'not-clickable': +transaction.amount < 0}">
     <div class="icon">
         <img src="assets/images/trx-placeholder.svg">
     </div>

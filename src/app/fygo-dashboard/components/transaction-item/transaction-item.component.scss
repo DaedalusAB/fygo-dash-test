@@ -1,6 +1,12 @@
 @import "/src/styles/list-item.scss";
 
 .list-item {
+    &.not-clickable {
+        &:hover {
+            cursor: default;
+        }
+    }
+
     .data {
         .title {
             &.cashback {
