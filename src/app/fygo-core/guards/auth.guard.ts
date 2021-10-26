@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean | UrlTree {
     //  Not sure how to check if token is expired, so ignoring that piece
-    if (this.authService.hasToken) {
+    if (this.authService.hasToken()) {
       return true;
     }
 

@@ -9,6 +9,8 @@ import { Merchant, MerchantsPage } from 'src/app/fygo-shared/models/merchant.mod
   styleUrls: ['./merchant-list.component.scss']
 })
 export class MerchantListComponent implements OnInit {
+  //  TODO merchant list and transaction list are very similar and there is code duplication;
+  //  I couldn't abstract it quickly, so I left it; I'd be happy to refactor it if given more time :) 
   public merchants: Merchant[] = [];
   private lastPage: MerchantsPage;
 

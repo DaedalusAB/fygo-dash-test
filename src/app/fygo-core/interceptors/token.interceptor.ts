@@ -11,9 +11,9 @@ export class TokenInterceptor implements HttpInterceptor {
     ) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        //  TODO maybe there is a better way to do this, but I gotta go fast;
         //  Do not attach token to login request 
-        //  TODO maybe there is a better way to do this, but I gotta go fast atm
-        if(request.url.includes('api-token-auth/')) {
+        if (request.url.includes('api-token-auth/')) {
             return next.handle(request);
         }
 
@@ -22,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
                 Authorization: `Token ${this.authService.getToken()}`
             }
         });
-        
+
         return next.handle(request);
     }
 }

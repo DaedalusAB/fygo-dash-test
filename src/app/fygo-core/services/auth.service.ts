@@ -20,14 +20,11 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  public get hasToken(): boolean {
+  public hasToken(): boolean {
     return !!this.token;
   }
 
   public getToken(): string {
-    //  TODO refactor this ?
-    //  TS doesn't allow for getter and setter to have different accessors;
-    //  And I do not want to make my token setter public - hence this method kinda duplicates token getter
     return this.token;
   }
 
