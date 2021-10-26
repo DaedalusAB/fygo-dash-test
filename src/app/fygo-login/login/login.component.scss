@@ -5,10 +5,9 @@
     align-items: center;
 
     border: 1px solid var(--border-color);
-    border-radius: 9px;
     height: fit-content;
     width: fit-content;
-    padding: 20px;
+    padding: 40px 20px 20px 20px;
     margin: auto;
 
     .control-container {
@@ -25,6 +24,28 @@
 
             position: absolute;
             top: 20px;
+        }
+    }
+
+    .login-button {
+        font-size: 20px;
+        font-weight: 700;
+
+        width: 100%;
+        text-align: right;
+
+        &:hover {
+            cursor: pointer;
+            color: var(--highlight-color);
+        }
+
+        &.disabled {
+            color: var(--border-color);
+
+            &:hover {
+                cursor: default;
+                color: var(--border-color);
+            }
         }
     }
 }

@@ -12,6 +12,6 @@
             <input class="default-input" formControlName="password" type="password" placeholder="Password">
         </div>
     </form>
-    <button class="default-button" (click)="login()" [disabled]="authForm.invalid">Login</button>
+    <div class="login-button" (click)="login()" [ngClass]="{'disabled': authForm.invalid}">Login</div>
 </div>
 <fygo-loader-overlay *ngIf="isLoading"></fygo-loader-overlay>
