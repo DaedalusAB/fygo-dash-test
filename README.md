@@ -15,4 +15,5 @@ https://fygo.notion.site/fygo/Fygo-Lead-Frontend-Engineer-199e8d8bd3af4c33af6ccf
 
 ### To run locally:
 `npm i
-ng s`
+ng s
+`
