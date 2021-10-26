@@ -53,7 +53,8 @@ export class LoginComponent implements OnInit {
   }
 
   public shouldDisplayPasswordValidation(): boolean {
-    return this.authForm && this.authForm.controls['password'].dirty && this.authForm.controls['password'].errors.required;
+    return this.authForm && this.authForm.controls['password'].dirty 
+    && this.authForm.controls['password'].errors && this.authForm.controls['password'].errors.required;
   }
 
   public keyDownFunction(event): void {

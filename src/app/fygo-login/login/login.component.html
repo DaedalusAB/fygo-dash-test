@@ -12,6 +12,8 @@
             <span class="input-error" *ngIf="shouldDisplayPasswordValidation()">You must enter your password</span>
         </div>
     </form>
-    <div class="login-button" (click)="login()" [ngClass]="{'disabled': authForm.invalid}">Login</div>
+    <div class="form-controls">
+        <button class="login-button" (click)="login()" [ngClass]="{'disabled': authForm.invalid}">Login</button>
+    </div>
 </div>
 <fygo-loader-overlay *ngIf="isLoading"></fygo-loader-overlay>
