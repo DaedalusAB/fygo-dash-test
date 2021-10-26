@@ -10,6 +10,7 @@ import { MerchantListComponent } from './components/merchant-list/merchant-list.
 import { TransactionsListComponent } from './components/transactions-list/transactions-list.component';
 import { MerchantsResolver } from './resolvers/merchants.resolver';
 import { TransactionsResolver } from './resolvers/transactions.resolver';
+import { MerchantComponent } from './components/merchant/merchant.component';
 
 const routes: Route[] = [
   {
@@ -30,6 +31,11 @@ const routes: Route[] = [
         path: 'transactions',
         component: TransactionsListComponent,
         resolve: { transactionsFirstPage: TransactionsResolver }
+      },
+      {
+        path: 'merchant/:merchantId',
+        component: MerchantComponent,
+        //  TODO resolve
       }
     ]
   }
@@ -42,6 +48,7 @@ const routes: Route[] = [
     MerchantItemComponent,
     TransactionsListComponent,
     TransactionItemComponent,
+    MerchantComponent,
   ],
   imports: [
     CommonModule,

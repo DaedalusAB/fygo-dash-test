@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Merchant } from 'src/app/fygo-shared/models/merchant.model';
 
 @Component({
@@ -9,6 +10,11 @@ import { Merchant } from 'src/app/fygo-shared/models/merchant.model';
 export class MerchantItemComponent {
   @Input() merchant: Merchant;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
+  public openMerchant(): void {
+    this.router.navigate(['dashboard', 'merchant', this.merchant.id]);
+  }
 }
