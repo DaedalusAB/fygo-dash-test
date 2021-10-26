@@ -19,8 +19,13 @@ export class TransactionItemComponent {
     return new Date(this.transaction.created);
   }
 
+  public get isCashback(): boolean {
+    return +this.transaction.amount > 0;
+  }
+
   public openMerchant(): void {
-    if(+this.transaction.amount > 0)
-    this.router.navigate(['dashboard', 'merchant', this.transaction.merchant_id]);
+    if (this.isCashback) {
+      this.router.navigate(['dashboard', 'merchant', this.transaction.merchant_id]);
+    }
   }
 }

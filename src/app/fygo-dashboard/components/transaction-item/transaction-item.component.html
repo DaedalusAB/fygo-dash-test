@@ -1,4 +1,4 @@
-<div class="list-item" (click)="openMerchant()" [ngClass]="{'not-clickable': +transaction.amount < 0}">
+<div class="list-item" (click)="openMerchant()" [ngClass]="{'not-clickable': !isCashback}">
     <div class="icon">
         <img src="assets/images/trx-placeholder.svg">
     </div>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="data">
-        <div class="title" [ngClass]="{'cashback' : +transaction.amount > 0, 'withdrawal': +transaction.amount < 0}">{{transaction.amount}}&nbsp;£</div>
+        <div class="title" [ngClass]="{'cashback' : isCashback, 'withdrawal': !isCashback}">{{transaction.amount}}&nbsp;£</div>
         <div class="subtitle">Cashback</div>
     </div>
 </div>
